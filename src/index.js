@@ -26,21 +26,26 @@ class Board extends React.Component {
 
   render() {    
     return (
-      <div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
+      <div class="container">
+        <div>
+          <h1 className="jumbotron">Tic-React-Toe</h1>
         </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
+        <div id="gameBoard">
+          <div className="board-row">
+            {this.renderSquare(0)}
+            {this.renderSquare(1)}
+            {this.renderSquare(2)}
+          </div>
+          <div className="board-row">
+            {this.renderSquare(3)}
+            {this.renderSquare(4)}
+            {this.renderSquare(5)}
+          </div>
+          <div className="board-row">
+            {this.renderSquare(6)}
+            {this.renderSquare(7)}
+            {this.renderSquare(8)}
+          </div>
         </div>
       </div>
     );
@@ -95,8 +100,8 @@ class Game extends React.Component {
       const desc = move ? 'Move ' + move :
       'Start';
       return (
-        <li key={move}>
-          <button onClick={()=> this.jumpTo(move)}>{desc}</button>
+        <li key={move} className="list-group-item">
+          <button type="button" className="btn btn-secondary" id="histBtn" onClick={()=> this.jumpTo(move)}>{desc}</button>
         </li>
       )
     })
@@ -118,7 +123,7 @@ class Game extends React.Component {
           />
         </div>
         <div className="game-info">
-          <div>{status}</div>
+          <div className="">{status}</div>
           <ol>{moves}</ol>
         </div>
       </div>
